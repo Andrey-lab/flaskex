@@ -1,0 +1,16 @@
+Problem:
+
+Traceback (most recent call last):
+  File "D:\Dev\simbirsoft_devops\flaskex\app.py", line 4, in <module>
+    from scripts import forms
+  File "D:\Dev\simbirsoft_devops\flaskex\scripts\forms.py", line 6, in <module>
+    class LoginForm(Form):
+  File "D:\Dev\simbirsoft_devops\flaskex\scripts\forms.py", line 7, in LoginForm
+    username = StringField('Username:', validators=[validators.required(), validators.Length(min=1, max=30)])
+AttributeError: module 'wtforms.validators' has no attribute 'required'
+
+
+Solution:
+
+Change attribute 'required' on 'input_required' or 'InputRequired' in flaskex\scripts\forms.py,
+because attribute 'required' was used in the old version "WTForms"
